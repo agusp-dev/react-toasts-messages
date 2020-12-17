@@ -2,8 +2,8 @@ import React from 'react'
 import successIcon from '../assets/icon-success.png'
 import infoIcon from '../assets/icon-info.png'
 import errorIcon from '../assets/icon-error.png'
-
 import closeIcon from '../assets/icon-close.png'
+import './ToastMessage.css'
 
 const ToastMessage = ({ type, title, description }) => {
 
@@ -26,7 +26,7 @@ const ToastMessage = ({ type, title, description }) => {
 	}
 
 	return (
-		<div className={`flex flex-row bg-${ getBackgroundColor() }-500 border-l-4 border-${ getBackgroundColor() }-800 py-2 px-3 shadow-md mb-2 w-80 rounded`}>
+		<div className={`flex flex-row bg-${ getBackgroundColor() }-500 border-l-4 border-${ getBackgroundColor() }-800 py-2 px-3 shadow-md mb-2 w-80 rounded toast`}>
 			<div className='mr-3 flex-none'>
 				<img width='24' src={ getIcon() } alt='success' />
 			</div>
