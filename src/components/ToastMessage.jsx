@@ -5,7 +5,7 @@ import errorIcon from '../assets/icon-error.png'
 import closeIcon from '../assets/icon-close.png'
 import './ToastMessage.css'
 
-const ToastMessage = ({ type, title, description }) => {
+const ToastMessage = ({ type, title, description, onClose }) => {
 
 	const getBackgroundColor = () => {
 		switch (type) {
@@ -35,7 +35,12 @@ const ToastMessage = ({ type, title, description }) => {
 				<p className='text-gray-50 text-sm mt-1'>{ description }</p>
 			</div>
 			<div className='ml-3 flex-none'>
-				<img width='24' src={ closeIcon } alt='close' />
+				<img
+					className='cursor-pointer'
+					width='24px' 
+					src={ closeIcon } 
+					alt='close'
+					onClick={ () => onClose(type) } />
 			</div>
 		</div>
 	)
