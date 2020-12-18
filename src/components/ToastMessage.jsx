@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import successIcon from '../assets/icon-success.png'
 import infoIcon from '../assets/icon-info.png'
 import errorIcon from '../assets/icon-error.png'
@@ -6,6 +6,12 @@ import closeIcon from '../assets/icon-close.png'
 import './ToastMessage.css'
 
 const ToastMessage = ({ type, title, description, onClose }) => {
+
+	useEffect(() => {
+		setTimeout(() => {
+			onClose(type)
+		}, 3000) 
+	}, [])
 
 	const getBackgroundColor = () => {
 		switch (type) {
